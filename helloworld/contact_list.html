@@ -1,0 +1,39 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<h1>Contacts</h1>
+
+<table class="table table-bordered">
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Email</th>
+<th scope="col">DOB</th>
+<th scope="col">Address</th>
+<th scope="col">Phone</th>
+<th scope="col">Image</th>
+<th scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for contact in object_list %}
+<tr>
+<td>{{ contact.name }}</td>
+<td>{{ contact.email }}</td>
+ <td>{{ contact.dob }}</td> 
+<td>{{ contact.address }}</td>
+<td>{{ contact.phone }}</td>
+<td>{{ contact.image }}</td>
+<td>
+<a  href="{% url "contact_detail" contact.id  %}">details |</a>
+<a  href="{% url "contact_update"  contact.id  %}">edit |</a>
+<a  href="{% url "contact_delete"  contact.id  %}">delete</a>
+</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+<center><a  href="{% url "contact_create" %}">Add Contacts</a></center>

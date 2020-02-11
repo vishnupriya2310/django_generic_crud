@@ -1,0 +1,16 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ {% block raw %}
+<h1>Contact Details</h1>
+<div class="form-group row" style="padding-left: 76px">
+<p>Name: {{object.name}}</p>
+<p>Email: {{object.email}}</p>
+<p>dob: {{object.dob}}</p> 
+<p>Address: {{object.address}}</p>
+<p>Phone: {{object.phone}}</p>
+
+<p> <img src="/media/{{ object.image}}"  ></p>
+{% endblock %}
+</div>
